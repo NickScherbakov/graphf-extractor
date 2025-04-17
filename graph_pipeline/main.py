@@ -150,6 +150,19 @@ def main():
 
                 if not valid_cost_models:
                     logger.error("Could not determine valid costs for any available vision models. Cannot select cheapest.")
+                    # Add detailed logging about why all models got infinite costs
+                    logger.error("All available models received infinite cost scores. This typically happens when:")
+                    logger.error("1. Cost data is missing or malformed in the model metadata")
+                    logger.error("2. The model API returned invalid cost information")
+                    logger.error("3. There might be issues with API access or model availability")
+                    
+                    # Print model IDs with their issues for debugging
+                    for cost, model in model_costs:
+                        model_id = model.get('id', 'unknown')
+                        cost_context = model.get('cost_context', 'missing')
+                        cost_completion = model.get('cost_completion', 'missing')
+                        logger.error(f"Model {model_id}: cost_context={cost_context}, cost_completion={cost_completion}")
+                    
                     sys.exit(1)
 
                 # This line should now work correctly as cost is always comparable
@@ -224,11 +237,9 @@ def main():
 
 
         if success:
-            logger.info(f"Manim script generated successfully: {script_path}")
-            logger.info("To render the animation, run:")
-            logger.info(f"  bash run_manim.sh {script_path}")
+            print(f"✅ manim script generated: {script_path}")
         else:
-            logger.error("Failed to generate Manim script (generate_graph_and_matrix_script returned False).")
+            print("❌ failed to generate manim script")
             sys.exit(1)
 
         logger.info("Pipeline finished successfully.")

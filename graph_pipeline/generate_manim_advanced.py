@@ -1,6 +1,11 @@
-from manim import *
+from typing import List, Any
 
-def generate_graph_and_matrix_script(nodes, edges, output_file="graph_manim.py"):
+def generate_graph_and_matrix_script(
+    nodes: List[Any],
+    edges: List[tuple],
+    adj_matrix: List[List[int]],
+    output_file: str = "graph_manim.py"
+) -> bool:
     # Генерируем текст manim-скрипта
     with open(output_file, "w") as f:
         f.write(f'''
@@ -54,8 +59,5 @@ class GraphToAdjacency(Scene):
         return mat
 ''')
 
-if __name__ == "__main__":
-    # Пример использования
-    nodes = ["A", "B", "C", "D"]
-    edges = [("A", "B"), ("B", "C"), ("C", "D"), ("D", "A"), ("A", "C")]
-    generate_graph_and_matrix_script(nodes, edges)
+    # после успешной генерации скрипта:
+    return True

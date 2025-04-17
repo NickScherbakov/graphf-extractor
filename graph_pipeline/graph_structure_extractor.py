@@ -3,10 +3,12 @@ import os
 import requests
 import base64
 import logging
+from typing import List, Tuple, Optional, Any, Union
+import numpy as np
 
 logger = logging.getLogger(__name__)
 
-def extract_graph_structure(image_path: str, model_id: str, api_key: str, api_base_url: str):
+def extract_graph_structure(image_path: str, model_id: str, api_key: str, api_base_url: str) -> Tuple[Optional[List[Any]], Optional[List[Tuple[Any, Any]]]]:
     """
     Отправляет изображение графа на API (OpenAI-compatible) с промптом для извлечения вершин и рёбер.
     Использует указанную модель.
@@ -81,7 +83,7 @@ def extract_graph_structure(image_path: str, model_id: str, api_key: str, api_ba
 
     return nodes, edges
 
-def adjacency_matrix_from_edges(nodes, edges):
+def adjacency_matrix_from_edges(nodes: List[Any], edges: List[Tuple[Any, Any]]) -> np.ndarray:
     G = nx.Graph()
     G.add_nodes_from(nodes)
     G.add_edges_from(edges)

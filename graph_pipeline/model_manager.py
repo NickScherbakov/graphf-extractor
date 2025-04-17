@@ -111,7 +111,7 @@ def load_model_cache(cache_path: str = CACHE_FILE) -> Dict[str, Any]:
             return {"last_updated": None, "models": {}} # Return dict for models
     return {"last_updated": None, "models": {}} # Return dict for models
 
-def save_model_cache(cache_data: Dict[str, Any], cache_path: str = CACHE_FILE):
+def save_model_cache(cache_data: Dict[str, Any], cache_path: str = CACHE_FILE) -> None:
     """Saves the model cache to a JSON file.""" # Corrected docstring format
     try:
         with open(cache_path, 'w') as f:
