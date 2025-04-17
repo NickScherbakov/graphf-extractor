@@ -1,4 +1,4 @@
-PyMuPDF
-graphreader
-networkx
-manim
+requests
+python-dotenv
+beautifulsoup4
+lxml

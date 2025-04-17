@@ -1,39 +1,17 @@
-# Byte-compiled / optimized / DLL files
+# Cache file for API models
+model_cache.json
+
+# Environment variables
+.env
+
+# Python cache
 __pycache__/
-*.py[cod]
-*$py.class
+*.pyc
 
-# Distribution / packaging
-build/
+# Build artifacts
 dist/
+build/
 *.egg-info/
-
-# Caches
-.cache/
-*.log
-
-# IDEs and editors
-.vscode/
-.idea/
-*.sublime-project
-*.sublime-workspace
-
-# Jupyter
-.ipynb_checkpoints/
 
 # Manim output
 media/
-videos/
-*.mp4
-*.mov
-*.avi
-
-# PDF images
-pdf_images/
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# Env
-.env
