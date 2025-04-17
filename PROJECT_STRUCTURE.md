@@ -3,35 +3,64 @@
 This diagram shows the main components and data flow of the project.
 
 ```mermaid
-graph TD
+flowchart TD
+    %% Определение узлов
+    A[PDF Файл в uploads/]
+    B[extract_graph_image.py]
+    C[Изображения в pdf_images/]
+    D[main.py / CLI]
+    E[graph_structure_extractor.py]
+    F[model_manager.py]
+    G[model_cache.json]
+    H[gptunnel.ru API]
+    I[Структура графа nodes, edges]
+    J[generate_manim_advanced.py]
+    K[run_manim.sh]
+    L[Видео/анимация графа]
+    M[Матрица смежности]
+    
+    %% Группировка и связи
     subgraph "Входные данные"
-        A[PDF Файл в uploads/]
+        A
     end
-
+    
     subgraph "Подготовка"
-        B(graph_pipeline/extract_graph_image.py) -- Извлекает --> C{Изображения страниц в pdf_images/}
+        B
     end
-
+    
     subgraph "Ядро: Извлечение графа"
-        D(graph_pipeline/main.py / CLI) -- Запускает --> E(graph_pipeline/graph_structure_extractor.py)
-        E -- Запрашивает модель --> F(graph_pipeline/model_manager.py)
-        F -- Загружает/Обновляет --> G[model_cache.json]
-        F -- Запрашивает API --> H{gptunnel.ru API (/v1/models, /v1/chat/completions)}
-        F -- Возвращает ID модели --> E
-        E -- Отправляет изображение + ID модели --> H
-        H -- Возвращает --> I{Структура графа (nodes, edges)}
-        E -- Получает --> I
+        D
+        E
+        F
+        G
+        H
+        I
+        M
     end
-
-    subgraph "Визуализация (Manim)"
-        I -- Передает структуру --> J(graph_pipeline/generate_manim_advanced.py)
-        K(run_manim.sh) -- Выполняет --> J
-        J -- Генерирует --> L[Видео/анимация графа]
+    
+    subgraph "Визуализация Manim"
+        J
+        K
+        L
     end
-
+    
+    %% Связи между узлами
     A --> B
-    B --> C
+    B -- "Извлекает" --> C
     C --> E
+    D -- "Запускает" --> E
+    D -- "Запрашивает модель" --> F
+    F -- "Загружает/Обновляет" --> G
+    F -- "Запрашивает" --> H
+    F -- "Возвращает ID модели" --> D
+    E -- "Отправляет изображение" --> H
+    H -- "Возвращает данные" --> I
+    E -- "Анализирует" --> I
+    I -- "Преобразуется в" --> M
+    I -- "Передает структуру" --> J
+    M -- "Передает матрицу" --> J
+    K -- "Выполняет" --> J
+    J -- "Генерирует" --> L
 ```
 
 **Пояснения к схеме:**
