@@ -1,0 +1,13 @@
+{
+  "calls_count": 2,
+  "total_cost_estimate": 0.01842,
+  "calls_by_model": {
+    "grok-3": {
+      "count": 2,
+      "total_cost": 0.01842,
+      "total_tokens_input": 1152,
+      "total_tokens_output": 230
+    }
+  },
+  "session_start": "2025-04-17T16:30:58.570687"
+}

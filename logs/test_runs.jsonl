@@ -1,0 +1,1 @@
+{"timestamp": "2025-04-17T16:31:28.462679", "test_name": "test_image_recognition", "status": "PASS", "duration_ms": 29829.792261123657, "nodes_count": 8, "edges_count": 10, "image_path": "testimages/testimage.png", "api_duration_ms": 11435.089826583862}

@@ -17,7 +17,7 @@ if [ -z "$OPENAI_API_KEY" ]; then
   exit 1
 fi
 
-IMG_PATH="pdf_images/page1.png"
+IMG_PATH="testimages/testimage.png"
 if [ ! -f "$IMG_PATH" ]; then
   echo "Файл $IMG_PATH не найден!" >&2
   exit 1

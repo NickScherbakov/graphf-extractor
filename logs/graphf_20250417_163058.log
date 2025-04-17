@@ -1,0 +1,13 @@
+2025-04-17 16:30:58,571 [INFO] [logger.py:482] Инициализирована система логирования графа (уровень: INFO)
+2025-04-17 16:30:58,571 [INFO] [logger.py:483] Лог-файлы будут сохранены в папке 'logs'
+2025-04-17 16:30:58,633 [INFO] [logger.py:482] Инициализирована система логирования графа (уровень: INFO)
+2025-04-17 16:30:58,633 [INFO] [logger.py:483] Лог-файлы будут сохранены в папке 'logs'
+2025-04-17 16:30:58,636 [WARNING] [model_manager.py:141] Invalid date format in cache. Forcing refresh.
+2025-04-17 16:30:58,636 [INFO] [model_manager.py:151] Fetching available models from API...
+2025-04-17 16:30:59,166 [INFO] [model_manager.py:158] Fetched 57 models from the API.
+2025-04-17 16:30:59,168 [INFO] [model_manager.py:212] Model cache updated and saved to model_cache.json
+2025-04-17 16:31:25,521 [INFO] [graph_structure_extractor.py:42] Using model 'grok-3' for graph extraction via https://gptunnel.ru/v1/chat/completions.
+2025-04-17 16:31:28,461 [INFO] [logger.py:114] API вызов: grok-3, токены: 152/30, стоимость: $0.0024, всего: $0.0024
+2025-04-17 16:31:28,462 [INFO] [logger.py:114] API вызов: grok-3, токены: 1000/200, стоимость: $0.0160, всего: $0.0184
+2025-04-17 16:31:28,462 [INFO] [logger.py:368] API вызов выполнен за 2940.30 мс
+2025-04-17 16:31:28,462 [INFO] [logger.py:255] [TEST PASS] ✓ test_image_recognition (29829.79 ms)

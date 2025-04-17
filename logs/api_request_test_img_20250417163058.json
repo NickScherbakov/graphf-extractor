@@ -1,0 +1,6 @@
+{
+  "timestamp": "2025-04-17T16:31:17.027344",
+  "image_path": "testimages/testimage.png",
+  "model_id": "grok-3",
+  "api_base_url": "https://gptunnel.ru/v1"
+}

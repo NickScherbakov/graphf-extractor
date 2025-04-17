@@ -1,0 +1,6 @@
+{
+  "timestamp": "2025-04-17T16:30:58.633850",
+  "test_type": "image_recognition",
+  "image_path": "testimages/testimage.png",
+  "budget_limit": 1.0
+}
